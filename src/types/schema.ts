@@ -88,6 +88,7 @@ export interface FormField {
   /** @deprecated */
   inlineMultiCheckbox?: boolean;
   meta?: QuestionMetaProps;
+  width? : string;
 }
 
 export interface HideProps {

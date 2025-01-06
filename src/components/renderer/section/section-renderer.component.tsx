@@ -18,11 +18,8 @@ export const SectionRenderer = ({ section }: { section: FormSection }) => {
          }}>
       {section.questions.map((question) =>
         formFieldAdapters[question.type] ? (
-          <div key={`${sectionId}-${question.id}`}
-               style={{
-                 width: `${question.width || '100%'}`,
-               }}
-          >
+          <div key={`${sectionId}-${question.id}`} className={styles.sectionBody}
+               style={{ width: `${question.width || '100%'}`, display: 'inline-block', paddingRight: '10px' }}>
             <FormFieldRenderer
               key={question.id}
               fieldId={question.id}
