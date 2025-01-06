@@ -8,18 +8,10 @@ export const SectionRenderer = ({ section }: { section: FormSection }) => {
   const { formFieldAdapters } = useFormProviderContext();
   const sectionId = useMemo(() => section.label.replace(/\s/g, ''), [section.label]);
   return (
-    <div className={styles.section}
-         style={{
-           display: 'flex',
-           flexDirection: 'row',
-           width: '100%',
-           justifyContent: 'space-between',
-           flexWrap: 'wrap',
-         }}>
+    <div className={styles.section}>
       {section.questions.map((question) =>
         formFieldAdapters[question.type] ? (
-          <div key={`${sectionId}-${question.id}`} className={styles.sectionBody}
-               style={{ width: `${question.width || '100%'}`, display: 'inline-block', paddingRight: '10px' }}>
+          <div key={`${sectionId}-${question.id}`} className={styles.sectionBody}>
             <FormFieldRenderer
               key={question.id}
               fieldId={question.id}
